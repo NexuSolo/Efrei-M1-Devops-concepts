@@ -15,4 +15,9 @@ class AppTest {
         assertEquals(5, classUnderTest.add(2, 3), "add should return the sum of its arguments");
     }
 
+    @Test void getGreetingShouldReturnHelloWorld() {
+        App classUnderTest = new App();
+        assertEquals("Hello World!", classUnderTest.getGreeting(), "getGreeting should return 'Hello World!'");
+    }
+
 }
