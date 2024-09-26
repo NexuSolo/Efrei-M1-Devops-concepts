@@ -32,6 +32,15 @@ java {
     }
 }
 
+tasks.jar {
+    manifest {
+        attributes(
+            "Main-Class" to "efrei.m1.devops.concepts.App"
+        )
+    }
+    from(configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) })
+}
+
 application {
     // Define the main class for the application.
     mainClass = "efrei.m1.devops.concepts.App"
